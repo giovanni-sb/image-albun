@@ -10,3 +10,39 @@ header{
     background-color: rgb(0, 200, 255);
     display: flex;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+main form{
+    text-align: center;
+}
+.albun-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.albun-cover {
+    position: relative;
+    margin: 0.5rem;
+    font-size: 0;
+    padding: 0px;
+}
+.albun-cover img{
+    height: 11rem;
+    width: 15rem;
+    object-fit: cover;
+}
+
+.albun-cover p{
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    font-size: 0.75rem;
+    bottom: 0px;
+    left: 0px;
+    margin: 0rem;
+    padding: 0.3rem;
+    border-top-right-radius: 0.5rem;
+}
