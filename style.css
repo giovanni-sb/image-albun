@@ -106,6 +106,22 @@ main h1{
 }
 #img-window img{
     position: relative;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+#previous-btn{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 10%;
+    height: 100%;
+}
+#next-btn{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 10%;
     height: 100%;
 }
 .invisible {
