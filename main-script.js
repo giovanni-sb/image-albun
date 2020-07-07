@@ -5,6 +5,11 @@ const api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+id
 // var data = requisition.then(function(response){
 //     return response.json()
 // })
+
+var img = document.getElementById('img-window')
+
+var btns = img.innerHTML;
+
 var data_requisition = fetch(api_url)
 var data = data_requisition.then(function(response){
     return response.json()
@@ -12,15 +17,27 @@ var data = data_requisition.then(function(response){
 var box = document.getElementById('albun-box')
 data.then(function(data){
     console.log(data)
-    for(var item of data){
-        console.log(item)
+    for(var id = 0; id<data.length; id++){
+        console.log(data[id])
         var div = document.createElement('div')
         div.setAttribute('class', 'img-thumbnail')
         var img = document.createElement('img')
-        img.setAttribute('src', item.location)
-        img.setAttribute('alt', item.description)
+        img.id = id
+        img.src = data[id].location
+        img.alt = data[id].description
         div.appendChild(img)
         box.appendChild(div)
+    }
+}).then(function(){
+    var thumbnails = document.getElementsByClassName("img-thumbnail")
+    console.log(thumbnails)
+    for(var i = 0; i<thumbnails.length; i++){
+        thumbnails[i].addEventListener('click', function(event){
+            img.innerHTML = this.innerHTML+btns
+            img.setAttribute('data-img-id', this.id)
+            img.setAttribute('class', '')
+            addBtns()
+        })
     }
 })
 
@@ -76,4 +93,51 @@ document.getElementsByTagName('h1')[0].addEventListener('click', function(){
     requisition.then(function(response){
         console.log(response.status)
     })
+})
+
+
+//var thumbnails = document.getElementsByClassName("img-thumbnail");
+
+
+
+
+
+function goToImg(imgId){
+    var thumb = thumbnails[imgId]
+    if(thumb != undefined){
+        img.innerHTML = thumb.innerHTML+btns
+        img.setAttribute('data-img-id', thumb.id)
+        img.setAttribute('class', '')
+        addBtns()
+    }
+    
+}
+
+
+
+function addBtns(){
+    document.getElementById('previous-btn').addEventListener('click', function(event){
+        console.log("anterior")
+        var imgId = img.getAttribute('data-img-id')
+        if(imgId != ''){
+            var prev = parseInt(imgId)-1
+            if(prev >= 0){
+                goToImg(prev)
+            }
+        }
+    })
+    document.getElementById('next-btn').addEventListener('click', function(event){
+        var imgId = img.getAttribute('data-img-id')
+        if(imgId != ''){
+            var next = parseInt(imgId)+1
+            goToImg(next)
+        }
+    })
+}
+
+img.addEventListener('click', function(event){
+    this.innerHTML = ''+btns
+    this.setAttribute('data-img-id', '')
+    this.setAttribute('class', 'invisible')
+    addBtns()
 })
