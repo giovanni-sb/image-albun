@@ -111,18 +111,29 @@ main h1{
     height: 100%;
 }
 #previous-btn{
+    cursor: pointer;
+    color: inherit;
     position: fixed;
     top: 0px;
     left: 0px;
     width: 10%;
     height: 100%;
+    transform: scaleX(-1);
 }
 #next-btn{
+    cursor: pointer;
+    color: inherit;
     position: fixed;
     top: 0px;
     right: 0px;
     width: 10%;
     height: 100%;
+}
+.arrow-img {
+    color: inherit;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 .invisible {
     color: transparent;
