@@ -25,24 +25,23 @@ main {
     flex-direction: column;
 }
 main form{
-    text-align: center;
-    margin: 0.5rem;
+    text-align: left;
+    font-size: 0;
 }
 main form input{
-    width: 72.6%;
-    border: var(--confirmation-border);
-    border-radius: 0.5rem;
-    padding: 0.2rem;
-}
-#url-input{
-    width: 93%;
+    width: 73.9%;
+    margin-left: 1.1%;
     border: var(--confirmation-border);
     border-radius: 0.5rem;
     padding: 0.2rem;
     margin-bottom: 0.2rem;
 }
+#url-input{
+    width: 95%;
+}
 main form button{
     width: 20%;
+    margin-left: 1.1%;
     min-width: 6.23rem;
     border: var(--confirmation-border);
     border-radius: 0.5rem;
@@ -50,7 +49,7 @@ main form button{
     background-color: var(--confirmation-color);
 }
 main h1{
-    margin: 0.5rem;
+    margin: 1.1%;
 }
 
 #albun-box {
@@ -144,4 +143,19 @@ main h1{
 }
 .invisible {
     color: transparent;
+}
+
+@media screen and (max-width: 510px) {
+    main form {
+        width: 96.7%
+    }
+    main form input{
+        width: 96.7%;
+    }
+    #url-input {
+        width: 96.7%;
+    }
+    main form button{
+        width: 100%;
+    }
 }
