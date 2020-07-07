@@ -9,54 +9,17 @@
 </head>
 <body>
 <header>
-    <h1>Meus Albuns de Imagens</h1>
+    <h1>Meu Album de Imagens</h1>
 </header>
 <main>
     <form id='main-form'>
-        <input id='url-input' type="text" placeholder="url de imagem para adicionar">
+        <input id='url-input' type="text" placeholder="url de imagem para adicionar" required>
+        <input id='alt-input' type="text" placeholder="descrição da imagem (obrigatória)" required>
         <button id='add-btn'>adicionar</button>
     </form>
-    <h1>Albuns</h1>
+    <h1>Imagens</h1>
     <div class="albun-box">
-        <div id="albun-1" class="albun-cover">
-            <img src="https://rufforosa.com.br/wp-content/uploads/2015/12/placeholder-8.jpg" 
-            alt="Placeholder para uma imagem a ser definida depois">
-            <p class="albun-title">Título (placeholder)</p>
-        </div>
-        <div id="albun-2" class="albun-cover">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" 
-            alt="Placeholder para uma imagem a ser definida depois">
-            <p>Título (placeholder)</p>
-        </div>
-        <div id="albun-3" class="albun-cover">
-            <img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" 
-            alt="Placeholder para uma imagem a ser definida depois">
-            <p>Título (placeholder)</p>
-        </div>
-        <div id="albun-4" class="albun-cover">
-            <img src="https://thumbs.dreamstime.com/z/new-york-vertical-preta-branca-constru%C3%A7%C3%A3o-do-ferro-de-passar-roupa-45486075.jpg" 
-            alt="Placeholder para uma imagem a ser definida depois">
-            <p>Título (placeholder)</p>
-        </div>
-        <div id="albun-5" class="albun-cover">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" 
-            alt="Placeholder para uma imagem a ser definida depois">
-            <p>Título (placeholder)</p>
-        </div>
-    </div>
-    <div id="confirmation_window">
-        <form id="confirmation-form">
-            <input id="alt" type="text" placeholder="descrição da imagem (obrigatória)" required>
-            <input id="new_album" type="radio"
-            name="albun_option" checked><label>Criar novo albúm</label>
-            <input id="album_name" type="text" placeholder="nome do albúm">
-            <input id="select_album" type="radio" name="albun_option">
-            <label>Inserir no albúm:</label>
-            <select id="albun_list" name="albun_list">
-                <option value="" disabled selected>Selecione um albúm</option>
-            </select>
-            <button id="confirm-btn">confirmar</button>
-        </form>
+        <div id="image-placeholder" class="img-thumbnails, invisible"></div>
     </div>
 </main>
 </body>

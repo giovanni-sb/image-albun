@@ -1,5 +1,5 @@
 var id = '60417'
-var api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+id
+const api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+id
 
 // var requisition = fetch(api_url)
 // var data = requisition.then(function(response){
@@ -8,9 +8,7 @@ var api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+id
 
 var albuns = document.getElementsByClassName("albun-cover")
 for(var i = 0; i<albuns.length; i++){
-    albuns[i].addEventListener('click', function(event) {
-        window.location = "./albun.html?id="+this.id
-    })
+    albuns[i].addEventListener('click', zoom_img())
 }
 
 var form = document.getElementById('main-form')
@@ -18,30 +16,29 @@ console.log(form)
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
-    var confirm_window = document.getElementById('confirmation_window')
     console.log('click')
     var url = document.getElementById('url-input')
+    var alt = document.getElementById('alt-input')
     var extension = url.value.split(".").slice(-1)[0]
     if(extension == 'jpg' || extension == 'png' || extension == 'bmp'){
-        var [alt, albun] = confirmation_window()
         console.log('imagem')
-        add_image(url.value, alt.value, albun.value)
+        add_to_api(url.value, alt.value)
     }
 })
 
-function confirmation_window(){
-
-}
-
-function add_image(url, description, albun){
+function add_to_api(url, alt){
     var json = {
-        "albun-id": albun,
-        "img-url": url,
-        "alt": description,
+        'location': url,
+        'description': alt
     }
-    console.log(json)
-}
+    var options = {
+        method: 'POST',
+        body: JSON.stringify(json),
+        headers: {
+            'content-type': 'application/json'
+        }
+    }
 
-function add_to_api(json){
-    
+    var requisition = fetch(api_url, options)
+    window.location.reload(true)
 }
