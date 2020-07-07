@@ -34,6 +34,13 @@ main form input{
     border-radius: 0.5rem;
     padding: 0.2rem;
 }
+#url-input{
+    width: 93%;
+    border: var(--confirmation-border);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    margin-bottom: 0.2rem;
+}
 main form button{
     width: 20%;
     min-width: 6.23rem;
