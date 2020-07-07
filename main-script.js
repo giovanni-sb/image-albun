@@ -18,15 +18,30 @@ console.log(form)
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
+    var confirm_window = document.getElementById('confirmation_window')
     console.log('click')
-    var input = document.getElementById('url-input')
-    console.log(input.value.split(".").slice(-1)[0])
-    if(input.value.split(".").slice(-1)[0] == ('png' || 'jpg' || 'bmp')){
+    var url = document.getElementById('url-input')
+    var extension = url.value.split(".").slice(-1)[0]
+    if(extension == 'jpg' || extension == 'png' || extension == 'bmp'){
+        var [alt, albun] = confirmation_window()
         console.log('imagem')
-        add_url_to_api(input.value)
+        add_image(url.value, alt.value, albun.value)
     }
 })
 
-function add_url_to_api(url){
+function confirmation_window(){
+
+}
+
+function add_image(url, description, albun){
+    var json = {
+        "albun-id": albun,
+        "img-url": url,
+        "alt": description,
+    }
+    console.log(json)
+}
+
+function add_to_api(json){
     
 }

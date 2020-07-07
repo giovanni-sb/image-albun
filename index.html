@@ -44,6 +44,20 @@
             <p>Título (placeholder)</p>
         </div>
     </div>
+    <div id="confirmation_window">
+        <form id="confirmation-form">
+            <input id="alt" type="text" placeholder="descrição da imagem (obrigatória)" required>
+            <input id="new_album" type="radio"
+            name="albun_option" checked><label>Criar novo albúm</label>
+            <input id="album_name" type="text" placeholder="nome do albúm">
+            <input id="select_album" type="radio" name="albun_option">
+            <label>Inserir no albúm:</label>
+            <select id="albun_list" name="albun_list">
+                <option value="" disabled selected>Selecione um albúm</option>
+            </select>
+            <button id="confirm-btn">confirmar</button>
+        </form>
+    </div>
 </main>
 </body>
 <script src="main-script.js"></script>
