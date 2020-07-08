@@ -1,11 +1,6 @@
 var id = '60417'
 const api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+id
 
-// var requisition = fetch(api_url)
-// var data = requisition.then(function(response){
-//     return response.json()
-// })
-
 var img = document.getElementById('img-window')
 
 var btns = img.innerHTML;
