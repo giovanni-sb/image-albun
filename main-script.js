@@ -12,11 +12,16 @@ var btns = img.innerHTML;
 
 var remove_btn = document.getElementById('remove-btn')
 
+var box = document.getElementById('albun-box')
+
 var data_requisition = fetch(api_url)
+
+var form = document.getElementById('main-form')
+
 var data = data_requisition.then(function(response){
     return response.json()
 })
-var box = document.getElementById('albun-box')
+
 data.then(function(data){
     console.log(data)
     for(var id = 0; id<data.length; id++){
@@ -42,10 +47,6 @@ data.then(function(data){
         })
     }
 })
-
-
-var form = document.getElementById('main-form')
-console.log(form)
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
@@ -83,23 +84,6 @@ function add_to_api(url, alt){
     })
 }
 
-document.getElementsByTagName('h1')[0].addEventListener('click', function(){
-    var options = {
-        method: 'DELETE',
-    }
-    var requisition = fetch(api_url, options)
-    requisition.then(function(response){
-        console.log(response.status)
-    })
-})
-
-
-//var thumbnails = document.getElementsByClassName("img-thumbnail");
-
-
-
-
-
 function goToImg(imgId){
     var thumb = thumbnails[imgId]
     if(thumb != undefined){
@@ -110,8 +94,6 @@ function goToImg(imgId){
     }
     
 }
-
-
 
 function addBtns(){
     document.getElementById('previous-btn').addEventListener('click', function(event){
