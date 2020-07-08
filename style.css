@@ -2,6 +2,8 @@
     --main-background: linear-gradient(rgb(0, 200, 255), rgb(0, 100, 255));
     --confirmation-color: rgb(90, 170, 120);
     --confirmation-border: 0.3rem solid var(--confirmation-color);
+    --remove-color: rgb(209, 24, 24);
+    --remove-border: 0.3rem solid var(--remove-color);
     --clear-text: white;
     --dark-text:black;
 }
@@ -135,6 +137,17 @@ main h1{
     width: 10%;
     height: 100%;
 }
+#remove-btn{
+    width: 10%;
+    margin-left: 1.1%;
+    min-width: 10rem;
+    border: var(--remove-border);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    background-color: var(--remove-color);
+
+}
+
 .arrow-img {
     color: inherit;
     width: 100%;
@@ -142,7 +155,10 @@ main h1{
     object-fit: contain;
 }
 .invisible {
-    color: transparent;
+    color: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 0 !important;
 }
 
 @media screen and (max-width: 510px) {

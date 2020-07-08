@@ -10,6 +10,8 @@ var img = document.getElementById('img-window')
 
 var btns = img.innerHTML;
 
+var remove_btn = document.getElementById('remove-btn')
+
 var data_requisition = fetch(api_url)
 var data = data_requisition.then(function(response){
     return response.json()
@@ -41,10 +43,6 @@ data.then(function(data){
     }
 })
 
-var albuns = document.getElementsByClassName("albun-cover")
-for(var i = 0; i<albuns.length; i++){
-    albuns[i].addEventListener('click', zoom_img())
-}
 
 var form = document.getElementById('main-form')
 console.log(form)
@@ -140,4 +138,9 @@ img.addEventListener('click', function(event){
     this.setAttribute('data-img-id', '')
     this.setAttribute('class', 'invisible')
     addBtns()
+})
+
+remove_btn.addEventListener('click', function(event){
+    var req = fetch(api_url, {method:'DELETE'})
+    req.finally(function(){window.location.reload(true)})
 })
