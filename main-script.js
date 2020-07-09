@@ -1,11 +1,13 @@
-var id = '60417'
-const api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+id
+var my_id = '60417'
+const api_url = 'https://projetofinal-ppw.herokuapp.com/api/'+my_id
 
 var img = document.getElementById('img-window')
 
 var btns = img.innerHTML;
 
 var remove_btn = document.getElementById('remove-btn')
+
+var add_btn = document.getElementById('add-btn')
 
 var box = document.getElementById('albun-box')
 
@@ -45,7 +47,7 @@ data.then(function(data){
 
 form.addEventListener('submit', function(e){
     e.preventDefault()
-    console.log('click')
+    add_btn.innerHTML = 'adicionando...'
     var url = document.getElementById('url-input')
     var alt = document.getElementById('alt-input')
     var extension = url.value.split(".").slice(-1)[0]
