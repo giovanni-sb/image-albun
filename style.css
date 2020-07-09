@@ -15,6 +15,7 @@ html, body {
     background-attachment: fixed;
 }
 header h1 {
+    color: var(--dark-text);
     margin: 0.5rem;
 }
 
@@ -52,6 +53,7 @@ main form button{
 }
 main h1{
     margin: 1.1%;
+    color: var(--dark-text);
 }
 
 footer {
